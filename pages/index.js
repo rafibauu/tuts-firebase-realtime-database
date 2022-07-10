@@ -1,10 +1,41 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
+import { getDatabase, ref, child, get } from 'firebase/database'
 import styles from '../styles/Home.module.css'
-import firebaseSDK from '../services/firebase-sdk'
+import firebaseApp from '../services/firebase-sdk'
 
 const Home = () => {
-  console.log(firebaseSDK);
+  const [isLoading, setIsLoading] = useState(true)
+  const snapshot = useRef(null)
+  const error = useRef(null)
+
+  const getValue = async () => {
+    try {
+      const database = getDatabase(firebaseApp)
+      const rootReference = ref(database)
+      const dbGet = await get(child(rootReference, 'posts'))
+      const dbValue = dbGet.val()
+      snapshot.current = dbValue
+    } catch (getError) {
+      error.current = getError.message
+    }
+    setIsLoading(false)
+  }
+
+  useEffect(() => {
+    getValue()
+  } ,[])
+
+  if (isLoading) {
+    return <p>Fetching data...</p>
+  }
+
+  const posts = snapshot.current
+  const data = Object.values(posts)
+
+  console.log({ posts, data })
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,6 +48,16 @@ const Home = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <div>
+          {data.map((item) => {
+            return (
+              <div key={item.title}>
+                <h2>{item.title}</h2>
+                <p>{item.content}</p>
+              </div>
+            )
+          })}
+        </div>
       </main>
 
       <footer className={styles.footer}>
@@ -25,14 +66,14 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Powered by
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  );
+  )
 }
 
 export default Home
