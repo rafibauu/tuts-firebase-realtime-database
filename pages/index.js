@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import firebaseSDK from '../services/firebase-sdk'
 
 const Home = () => {
+  console.log(firebaseSDK);
   return (
     <div className={styles.container}>
       <Head>
