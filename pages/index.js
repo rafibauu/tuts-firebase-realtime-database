@@ -1,40 +1,35 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
-import { getDatabase, ref, child, get } from 'firebase/database'
 import styles from '../styles/Home.module.css'
-import firebaseApp from '../services/firebase-sdk'
+import useGetValue from '../hooks/useGetValue'
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true)
-  const snapshot = useRef(null)
-  const error = useRef(null)
+  const posts = useGetValue('posts')
+  const users = useGetValue('users/adH8GE92Y2TpeCF2cs11C13IVB42')
+  const undefinedPath = useGetValue('undef')
 
-  const getValue = async () => {
-    try {
-      const database = getDatabase(firebaseApp)
-      const rootReference = ref(database)
-      const dbGet = await get(child(rootReference, 'posts'))
-      const dbValue = dbGet.val()
-      snapshot.current = dbValue
-    } catch (getError) {
-      error.current = getError.message
-    }
-    setIsLoading(false)
-  }
-
-  useEffect(() => {
-    getValue()
-  } ,[])
+  const isLoading = posts.isLoading || users.isLoading || undefinedPath.isLoading
 
   if (isLoading) {
     return <p>Fetching data...</p>
   }
 
-  const posts = snapshot.current
-  const data = Object.values(posts)
+  console.log({
+    posts: posts.isEmpty,
+    users: users.isEmpty,
+    undefinedPath: undefinedPath.isEmpty
+  })
 
-  console.log({ posts, data })
+  console.log({
+    posts: posts.snapshot,
+    users: users.snapshot,
+    undefinedPath: undefinedPath.snapshot
+  })
+
+  // const dataPosts = Object.values(posts.snapshot)
+  // const dataUsers = Object.values(users.snapshot)
+
+  // console.log({ dataPosts, dataUsers })
 
   return (
     <div className={styles.container}>
@@ -48,8 +43,8 @@ const Home = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <div>
-          {data.map((item) => {
+        {/* <div>
+          {dataPosts.map((item) => {
             return (
               <div key={item.title}>
                 <h2>{item.title}</h2>
@@ -57,7 +52,7 @@ const Home = () => {
               </div>
             )
           })}
-        </div>
+        </div> */}
       </main>
 
       <footer className={styles.footer}>
