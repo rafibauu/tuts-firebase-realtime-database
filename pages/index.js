@@ -5,26 +5,14 @@ import useGetValue from '../hooks/useGetValue'
 
 const Home = () => {
   const posts = useGetValue('posts')
-  const users = useGetValue('users/adH8GE92Y2TpeCF2cs11C13IVB42')
-  const undefinedPath = useGetValue('undef')
 
-  const isLoading = posts.isLoading || users.isLoading || undefinedPath.isLoading
+  console.log(posts)
 
-  if (isLoading) {
-    return <p>Fetching data...</p>
-  }
+  const isLoading = posts.isLoading
 
-  console.log({
-    posts: posts.isEmpty,
-    users: users.isEmpty,
-    undefinedPath: undefinedPath.isEmpty
-  })
-
-  console.log({
-    posts: posts.snapshot,
-    users: users.snapshot,
-    undefinedPath: undefinedPath.snapshot
-  })
+  // if (isLoading) {
+  //   return <p>Fetching data...</p>
+  // }
 
   // const dataPosts = Object.values(posts.snapshot)
   // const dataUsers = Object.values(users.snapshot)
@@ -39,10 +27,17 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {isLoading && <h4>Fetching data...</h4>}
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        <button
+          onClick={posts.getValueLater}
+          style={{ background: 'red', padding: 8 }}
+        >
+          Get Value later
+        </button>
         {/* <div>
           {dataPosts.map((item) => {
             return (
