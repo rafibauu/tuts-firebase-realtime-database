@@ -1,23 +1,33 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import useGetValue from '../hooks/useGetValue'
+import useCreateValue from '../hooks/useCreateValue'
 
 const Home = () => {
-  const posts = useGetValue('posts')
+  const createPost = useCreateValue()
+  const createUser = useCreateValue()
+  console.log(createUser)
 
-  console.log(posts)
+  const createNewPost = async () => {
+    const path = '/posts'
+    const value = {
+      title: 'Post dari push value',
+      content: 'Ini adalah content dari push value',
+      type: 'push'
+    }
 
-  const isLoading = posts.isLoading
+    await createPost.pushValue(path, value)
+  }
 
-  // if (isLoading) {
-  //   return <p>Fetching data...</p>
-  // }
+  const createNewUser = async () => {
+    const path = '/users'
+    const value = {
+      timestamp: Date.now(),
+      email: 'createnewuser@email.com',
+    }
 
-  // const dataPosts = Object.values(posts.snapshot)
-  // const dataUsers = Object.values(users.snapshot)
-
-  // console.log({ dataPosts, dataUsers })
+    await createUser.setValue(path, value)
+  }
 
   return (
     <div className={styles.container}>
@@ -27,27 +37,23 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {isLoading && <h4>Fetching data...</h4>}
+      {/* {isLoading && <h4>Fetching data...</h4>} */}
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
         <button
-          onClick={posts.getValueLater}
+          onClick={createNewPost}
           style={{ background: 'red', padding: 8 }}
         >
-          Get Value later
+          Push Value
         </button>
-        {/* <div>
-          {dataPosts.map((item) => {
-            return (
-              <div key={item.title}>
-                <h2>{item.title}</h2>
-                <p>{item.content}</p>
-              </div>
-            )
-          })}
-        </div> */}
+        <button
+          onClick={createNewUser}
+          style={{ background: 'blue', padding: 8 }}
+        >
+          Set Value
+        </button>
       </main>
 
       <footer className={styles.footer}>
