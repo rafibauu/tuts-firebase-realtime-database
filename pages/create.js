@@ -6,7 +6,8 @@ import useCreateValue from '../hooks/useCreateValue'
 const Home = () => {
   const createPost = useCreateValue()
   const createUser = useCreateValue()
-  console.log(createUser)
+  const createProduct = useCreateValue()
+  console.log({createProduct})
 
   const createNewPost = async () => {
     const path = '/posts'
@@ -29,6 +30,19 @@ const Home = () => {
     await createUser.setValue(path, value)
   }
 
+  const createNewProduct = async () => {
+    const path = '/cart'
+    const value = {
+      name: 'Karpet Ajaib Bisa Terbang',
+      category: 'Karpet',
+      price: '68000',
+      timestamp: Date.now(),
+      userId: '001'
+    }
+
+    await createProduct.setValueWithKey(path, value)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -42,7 +56,7 @@ const Home = () => {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <button
+        {/* <button
           onClick={createNewPost}
           style={{ background: 'red', padding: 8 }}
         >
@@ -53,6 +67,12 @@ const Home = () => {
           style={{ background: 'blue', padding: 8 }}
         >
           Set Value
+        </button> */}
+        <button
+          onClick={createNewProduct}
+          style={{ background: 'green', padding: 8 }}
+        >
+          Set Value With Key
         </button>
       </main>
 
