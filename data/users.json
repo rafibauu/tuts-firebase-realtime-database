@@ -1,0 +1,112 @@
+{
+  "cl6wassxm000909mc8r7j4yzg": {
+    "createdAt": 1640970000000,
+    "id": "cl6wassxm000909mc8r7j4yzg",
+    "name": "User 001",
+    "username": "user001",
+    "email": "user001@email.com",
+    "address": {
+      "city": "Surabaya"
+    },
+    "age": 25
+  },
+  "cl6wamhxu000109mc6n7263lb": {
+    "createdAt": 1642179600000,
+    "id": "cl6wamhxu000109mc6n7263lb",
+    "name": "User 002",
+    "username": "user002",
+    "email": "user002@email.com",
+    "address": {
+      "city": "Bandung"
+    },
+    "age": 19
+  },
+  "cl6wamw2n000209mc3o2a5s04": {
+    "createdAt": 1643302800000,
+    "id": "cl6wamw2n000209mc3o2a5s04",
+    "name": "User 003",
+    "username": "user003",
+    "email": "user003@email.com",
+    "address": {
+      "city": "Jayapura"
+    },
+    "age": 27
+  },
+  "cl6wanaj6000309mc45hxar7c": {
+    "createdAt": 1643698954000,
+    "id": "cl6wanaj6000309mc45hxar7c",
+    "name": "User 004",
+    "username": "user004",
+    "email": "user004@email.com",
+    "address": {
+      "city": "Makassar"
+    },
+    "age": 34
+  },
+  "cl6was4yp000809mcdztr1oew": {
+    "createdAt": 1643785354000,
+    "id": "cl6was4yp000809mcdztr1oew",
+    "name": "User 005",
+    "username": "user005",
+    "email": "user005@email.com",
+    "address": {
+      "city": "Medan"
+    },
+    "age": 23
+  },
+  "cl6wanww2000509mc1dpj7w7e": {
+    "createdAt": 1646204554000,
+    "id": "cl6wanww2000509mc1dpj7w7e",
+    "name": "User 006",
+    "username": "user006",
+    "email": "user006@email.com",
+    "address": {
+      "city": "Samarinda"
+    },
+    "age": 17
+  },
+  "cl6warvkh000709mc2lbjbc50": {
+    "createdAt": 1646377354000,
+    "id": "cl6warvkh000709mc2lbjbc50",
+    "name": "User 007",
+    "username": "user007",
+    "email": "user007@email.com",
+    "address": {
+      "city": "Mataram"
+    },
+    "age": 19
+  },
+  "cl6warmar000609mcee4s9m3n": {
+    "createdAt": 1646550154000,
+    "id": "cl6warmar000609mcee4s9m3n",
+    "name": "User 008",
+    "username": "user008",
+    "email": "user008@email.com",
+    "address": {
+      "city": "Bogor"
+    },
+    "age": 26
+  },
+  "cl6wanndq000409mc6ift403j": {
+    "createdAt": 1646722954000,
+    "id": "cl6wanndq000409mc6ift403j",
+    "name": "User 009",
+    "username": "user009",
+    "email": "user009@email.com",
+    "address": {
+      "city": "Jakarta"
+    },
+    "age": 30
+  },
+  "cl6wahgrn000009mcef2oemoo": {
+    "createdAt": 1649055754000,
+    "id": "cl6wahgrn000009mcef2oemoo",
+    "name": "User 010",
+    "username": "user010",
+    "email": "user010@email.com",
+    "address": {
+      "city": "Yogyakarta"
+    },
+    "age": 29
+  }
+}
