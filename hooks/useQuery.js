@@ -1,8 +1,18 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { ref, get, orderByKey, query } from 'firebase/database'
+import { ref, get, orderByKey, orderByValue, query } from 'firebase/database'
 import { database } from '../services/firebase-sdk'
 
-const useQuery = ({ path, initialLoad = true, queries = [] }) => {
+const getOrder = (type) => {
+  switch (type) {
+    case 'value':
+      return orderByValue()
+    case 'key':
+    default:
+      return orderByKey()
+  }
+}
+
+const useQuery = ({ path, initialLoad = true, type = 'key', queries = [] }) => {
   const [loading, setLoading] = useState(initialLoad)
   const snapshot = useRef(null)
   const error = useRef(null)
@@ -11,7 +21,7 @@ const useQuery = ({ path, initialLoad = true, queries = [] }) => {
   const queryValue = useCallback(async () => {
     try {
       const dbRef = ref(database, path)
-      const dbQuery = query(dbRef, orderByKey(), ...queries)
+      const dbQuery = query(dbRef, getOrder(type), ...queries)
       const dbGet = await get(dbQuery)
       const dbValue = dbGet.val()
       const dbExist = dbGet.exists()
