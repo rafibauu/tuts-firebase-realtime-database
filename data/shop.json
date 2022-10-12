@@ -1,0 +1,67 @@
+{
+  "cl7ptog6c000009li95gwdwtd": {
+    "address": "Bandung",
+    "name": "Toko buku utama",
+    "number": 1
+  },
+  "cl7ptouok000109li5qfccllj": {
+    "address": "Jakarta",
+    "name": "Buku Sejahtera",
+    "number": 2
+  },
+  "cl7ptp1ng000209li0ymx0k7z": {
+    "address": "Surabaya",
+    "name": "Perkakas Toko Abadi",
+    "number": 3
+  },
+  "cl7ptp7dh000309licpzq14q8": {
+    "address": "Medan",
+    "name": "Toko Komputer Terus",
+    "number": 4
+  },
+  "cl7ptpchy000409lihcp4gxoo": {
+    "address": "Yogyakarta",
+    "name": "Toko Furniture Buka Pertama",
+    "number": 5
+  },
+  "cl7ptphyg000509ligjccam0n": {
+    "address": "Semarang",
+    "name": "Online Lantai Shop",
+    "number": 6
+  },
+  "cl7ptpp11000609li10m96zij": {
+    "address": "Purwokerto",
+    "name": "Pulsa Jaya Abadi",
+    "number": 7
+  },
+  "cl7xd9mtb000009jqdb17edt4": {
+    "address": "Jayapura",
+    "name": "Toko Sport Utama",
+    "number": 8
+  },
+  "cl7xdcg35000009k02byk64mu": {
+    "address": "Maluku",
+    "name": "Perlengkapan Laut Shop",
+    "number": 9
+  },
+  "cl7yqu4db00000amo7rrh0c5a": {
+    "address": "Ternate",
+    "name": "Toko Sembako Abadi",
+    "number": 10
+  },
+  "cl7yqusay00010amo358wbsuy": {
+    "address": "Pontianak",
+    "name": "Toko Pesawat Terbang",
+    "number": 11
+  },
+  "cl7yqvrnd00020amo3gi7govn": {
+    "address": "Gorontalo",
+    "name": "Toko Komputer Jaya",
+    "number": 12
+  },
+  "cl7yqwayf00030amo7xv8a2lf": {
+    "address": "Mataram",
+    "name": "Toko Makanan Sehat Alami",
+    "number": 13
+  }
+}
