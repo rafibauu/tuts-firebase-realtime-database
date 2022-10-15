@@ -1,0 +1,96 @@
+{
+  "posts": {
+    "user001": {
+      "post001": {
+        "body": "Body post 001",
+        "title": "Judul Post 001"
+      },
+      "post002": {
+        "body": "Body Post 002",
+        "title": "Judul Post 002"
+      }
+    },
+    "user002": {
+      "post003": {
+        "bofy": "Body Post 003",
+        "title": "Judul Post 003"
+      }
+    }
+  },
+  "products": {
+    "product001": {
+      "name": "Bedak Murni",
+      "userId": "user001"
+    },
+    "product002": {
+      "name": "Semen Nempel",
+      "userId": "user003"
+    },
+    "product003": {
+      "name": "Sepeda Terbang",
+      "userId": "user001"
+    }
+  },
+  "products_tags": {
+    "producttags001": {
+      "productId": "product001",
+      "tagId": "tag001"
+    },
+    "producttags002": {
+      "productId": "product002",
+      "tagId": "tag002"
+    },
+    "producttags003": {
+      "productId": "product002",
+      "tagId": "tag003"
+    }
+  },
+  "profile": {
+    "user001": {
+      "birthday": "1960-08-17",
+      "city": "Bandung"
+    },
+    "user002": {
+      "birthday": "1970-02-14",
+      "city": "Bogor"
+    },
+    "user003": {
+      "birthday": "2000-01-01",
+      "city": "Amsterdam"
+    }
+  },
+  "tags": {
+    "tag001": {
+      "label": "Technology"
+    },
+    "tag002": {
+      "label": "Hot News"
+    },
+    "tag003": {
+      "label": "Coding"
+    }
+  },
+  "users": {
+    "user001": {
+      "createdAt": 1662128293216,
+      "email": "erdecode@gmail.com",
+      "name": "Erdecode Gmail",
+      "uid": "user001",
+      "updatedAt": 1662128293216
+    },
+    "user002": {
+      "createdAt": 1662128293216,
+      "email": "erdecode@yahoo.com",
+      "name": "Erdecode Yahoo",
+      "uid": "user002",
+      "updatedAt": 1662128293216
+    },
+    "user003": {
+      "createdAt": 1662128293216,
+      "email": "erdecode@facebook.com",
+      "name": "Erdecode Facebook",
+      "uid": "user003",
+      "updatedAt": 1662128293216
+    }
+  }
+}

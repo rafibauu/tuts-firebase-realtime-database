@@ -21,31 +21,25 @@ const getQuery = async (path, child, queries) => {
 
 const RelationPage = () => {
   const getData = async () => {
-    const user = await getValues('users/adH8GE92Y2TpeCF2cs11C13IVB42')
-    const profile = await getValues('profile/adH8GE92Y2TpeCF2cs11C13IVB42')
-    // const posts = await getValues('posts/adH8GE92Y2TpeCF2cs11C13IVB42')
-    // const posts = await getQuery('posts2', 'userId', [
-    //   equalTo('adH8GE92Y2TpeCF2cs11C13IVB42')
-    // ])
-    const postsTags = await getQuery('posts_tags', 'postId', [
-      equalTo('cl98h87fw000009l49cwcf2s9')
-    ])
-    const tag1 = await getValues('tags/cl98iurtk000m09labp6wghmz')
-    const tag2 = await getValues('tags/cl98ivljs000n09la55hn65ld')
-
-    console.log({ posts, postsTags, tag1, tag2 })
-
-    const technologyPosts = await getQuery('posts_tags', 'tagId', [
-      equalTo('cl98iurtk000m09labp6wghmz')
+    const user001 = await getValues('users/user001')
+    const user001Profile = await getValues('profile/user001')
+    const user001Posts = await getValues('posts/user001')
+    const user001Products = await getQuery('products', 'userId', [
+      equalTo('user001')
     ])
 
-    const posts = await getValues('posts2/cl98h87fw000009l49cwcf2s9')
+    const productsTags = await getQuery('products_tags', 'productId', [
+      equalTo('product001')
+    ])
 
-    console.log({technologyPosts, posts})
+    const tags = await getValues('tags/tag001')
 
-
-
-
+    console.log({ user001 })
+    console.log({ user001Profile })
+    console.log({ user001Posts })
+    console.log({ user001Products })
+    console.log({ productsTags })
+    console.log({ tags })
   }
 
   useEffect(() => {
